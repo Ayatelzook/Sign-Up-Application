@@ -2,8 +2,7 @@
 #include<string>
 #include<array>
 
-constexpr  int MAX_RECORDS=100;
-std::array<User,MAX_RECORDS>RECORDS;
+constexpr  int MAX_RECORDS=5;
 int ID=0;
 int ID_RECORDED=0;
 class User
@@ -14,7 +13,7 @@ class User
     
 };
 
-
+std::array<User,MAX_RECORDS>RECORDS;
 enum class options
 {
     Add=1,
@@ -23,9 +22,9 @@ enum class options
 
 };
 
-void SHOW()
+void SHOW()  
 {
-    std::cout<<"please selsect an option: \n ";
+    std::cout<<"please select an option: \n ";
     std::cout<<"1.Add Record \n";
     std::cout<<"2.Fetch Record \n";
     std::cout<<"3.Quit \n";
@@ -44,7 +43,7 @@ void ADD_RECORD(std::string name ,int age)
         }
         else
         std::cout<<"Sorry! Max number of Records reached \n";
-        std::cout<<"ID="<<ID<<"\n";
+        
     }
     void FETCH(int ID_RECORDED)
     {
@@ -61,7 +60,7 @@ void ADD_RECORD(std::string name ,int age)
     const int USER_SELECT()
     {
         int option;
-        std::cout<<"Enter Option \n";
+        std::cout<<"Enter Option :";
         std::cin>>option;
         return option;
 
@@ -73,14 +72,13 @@ void ADD_RECORD(std::string name ,int age)
     bool QUIT=false;
     while(!QUIT)
     {  
-      
       SHOW();
       int option =USER_SELECT();
       std::string User_Name;
       int User_Age;
       switch(option)
       {
-        case (static_cast<int>(options::Add)):
+        case (static_cast<int>(options::Add)):  //to convert from options to int 
         std::cout<<"please enter your name and age \n";
         std::cout<<"User Name:";
         std::cin>>User_Name;
@@ -89,7 +87,7 @@ void ADD_RECORD(std::string name ,int age)
         ADD_RECORD(User_Name,User_Age);
         break;
         case (static_cast<int>(options::Fetch)):
-        std::cout<<"please Enter User ID: \n";
+        std::cout<<"please Enter User ID: ";
         std::cin>>ID_RECORDED;
         FETCH(ID_RECORDED);
         break;
@@ -105,8 +103,3 @@ void ADD_RECORD(std::string name ,int age)
      }
      return 0;
    }
-
-
- 
-
-
