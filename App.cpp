@@ -2,7 +2,7 @@
 #include<string>
 #include<array>
 
-constexpr  int MAX_RECORDS=5;
+constexpr  int MAX_RECORDS=100;
 std::array<User,MAX_RECORDS>RECORDS;
 int ID=0;
 int ID_RECORDED=0;
