@@ -2,7 +2,7 @@
 #include<string>
 #include<array>
 
-constexpr  int MAX_RECORDS=5;
+constexpr  int MAX_RECORDS=100;
 int ID=0;
 int ID_RECORDED=0;
 class User
